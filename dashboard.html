@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<title>Signum - Dashboard</title>
+
+<head>
+  <!— Global site tag (gtag.js) - Google Analytics —>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L7KCQVM6GW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-L7KCQVM6GW');
+  </script>
+  <!-- NEW SCRIPT - SIMWEBDEV -->
+  <script>
+    // When the user scrolls down 80px from the top of the document, change background color
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        // document.getElementById("nav").style.backgroundColor= "#84E296";
+        // document.getElementById("nav").style.backgroundColor= "#eff6ee";
+      } else {
+        document.getElementById("nav").style.backgroundColor= '#0043ff00';
+      }
+    }
+  </script>
+  <!-- NEW STYLE - SIMWEBDEV -->
+  <style>
+    body{
+      max-width: 500px;
+      margin: auto;
+    }
+    nav{
+      z-index: 1;
+    }
+    nav{
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      width: 500px;
+      height: 113px;
+    }
+    .logo{
+      width: 80px;
+    }
+    li a, .dropbtn {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    li.dropdown {
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: fixed;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1;}
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .nav-buttons{
+      width: auto;
+    }
+    .nav-buttons a{
+    padding: 5px;
+    text-decoration: none;
+    color: #23272D;
+    }
+
+/* FIRST SECTION */
+    .first-section{
+      height: 100vh;
+      /* position: relative; */
+      padding-top: 50px;
+      margin: 0 0 70px 0;
+
+
+    }
+    .first-section .lead{
+      padding: 0 40px;
+    }
+
+    .bg-img{
+      /* position: absolute; */
+      width: 260px;
+      height: auto;
+      /* bottom: 0; */
+    }
+    .button-container a{
+      width: 153px;
+      margin: 10px;
+
+    }
+    .btn-primary{
+    background-color: #708AE8!important;
+    border-color: #708AE8;
+    }
+
+    .card-body{
+      font-size: 1.25rem;
+      font-weight: 300; padding: 20px;
+    }
+    .card{
+      box-shadow: 0 3px 6px rgb(0 0 0 / 13%), 0 3px 9px rgb(0 0 0 / 0%);
+      border: none;
+      margin: 20px 0 20px 0;
+    }
+    .titles{
+      font-weight: 700;
+        font-size: 38px;
+        line-height: 1.5;
+        color: #23272D;
+    }
+    .subtitles{
+      color: #708AE8;
+
+    }
+    .titles-wrap{
+      padding: 20px;
+      padding-bottom: 0;
+
+    }
+    .image-container{
+      display: flex;
+        justify-content: center;
+    }
+
+    .card-info{
+      margin: auto;
+        width: 340px;
+    }
+    .card-device{
+      margin: auto;
+        width: 89%;
+    }
+    .dashboard-btn-container a{
+    width: 184px;
+  }
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+      body{
+      max-width: 100vw;
+    }
+    nav{
+
+      width: 100vw;
+    }
+    .button-container a{
+        width: 153px;
+        margin: 10px;
+        font-size: 15px;
+      }
+    }
+    /* Extra small devices (phones, 350px and down) */
+    @media only screen and (max-width: 350px) {
+
+      .button-container a{
+      width: 123px;
+      margin: 6px;
+      font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container">
+    <header
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-between py-3 mb-4">
+
+      <li class="dropdown">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>        
+        <div class="dropdown-content">
+          <a href="/" class="nav-link px-2 link-secondary">Home</a>
+          <a href="/dashboard/" class="nav-link px-2 link-dark">Dashboard</a>
+          <a href="/purchase/" class="nav-link px-2 link-dark">Purchase</a>        
+        </div>
+      </li>
+      <!-- <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="/dashboard/" class="nav-link px-2 link-dark">Dashboard</a></li>
+        <li><a href="/purchase/" class="nav-link px-2 link-dark">Purchase</a></li>
+      </ul> -->
+      <a href="/" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none">
+        <img src="media/new-logo.png" class="logo" alt="">
+        <!-- <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+          <use xlink:href="media/logo_transparent.png" />
+        </svg> -->
+      </a>
+      <div class="nav-buttons col-md-3 text-end">
+        <!-- {% if not g.user %} -->
+        <!-- <a href="/signup/">Sign up</a> -->
+        <a href="/login/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+        </svg>
+      </a>
+        <!-- {% else %} -->
+        <!-- <a class="btn btn-outline-primary me-2 button" href="/dashboard/">Dashboard</a>
+        <a class="btn btn-primary button" href="/logout/">Log out</a> -->
+        <!-- {% endif %} -->
+      </div>
+    </header>
+  </div>
+</nav>
+<!-- <nav>
+  <div class="container">
+    <header
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+          <use xlink:href="#bootstrap" />
+        </svg>
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="/" class="nav-link px-2 link-dark">Home</a></li>
+        <li><a href="/dashboard/" class="nav-link px-2 link-secondary">Dashboard</a></li>
+        <li><a href="/purchase/" class="nav-link px-2 link-dark">Purchase</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+        {% if not g.user %}
+        <a class="btn btn-outline-primary me-2 button" href="/login/">Log in</a>
+        <a class="btn btn-primary button" href="/signup/">Sign up</a>
+        {% else %}
+        <a class="btn btn-outline-primary me-2 button" href="/dashboard/">Dashboard</a>
+        <a class="btn btn-primary button" href="/logout/">Log out</a>
+        {% endif %}
+      </div>
+    </header>
+  </div>
+</nav> -->
+
+<!-- {% if not_set != 0 %} -->
+
+<!-- <div class="alert alert-info" role="alert" style="text-align: center;">
+  <strong>Reminder</strong> You have {{not_set}} devices where a UDID hasn't been set
+</div> -->
+
+<!-- {% endif %} -->
+
+<section class="first-section">
+  <div class="px-4 py-5 my-5 text-center">
+    <!--img class="d-block mx-auto mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"-->
+    <h1 class="display-4 fw-bold">Dashboard</h1>
+    <h1 class="display-6 fw-bold" style="color: #708AE8;">Signum</h1>
+    <div class=" mx-auto">
+      <p class="lead mb-4">This is the user dashboard. Here you can view the App Library or Upload page to install your apps.
+      </p>
+      <!-- {% if g.user %}
+      <h4>
+        Welcome back, {{g.user.username}}
+      </h4>
+      {% endif %} -->
+      <br>
+      <img src="media/illustration-dashboard.png" class="bg-img"alt="">
+<br><br>
+      <div class="gap-2 d-sm-flex justify-content-sm-center button-container dashboard-btn-container">
+        <!-- {% if not g.user %} -->
+        <a class="btn btn-primary btn-lg px-4" href="/library/">Library</a>
+        <!-- {% else %}
+        <a class="btn btn-primary btn-lg px-4 gap-3" href="/dashboard/">Dashboard</a>
+        {% if g.user.admin %}
+        <a class="btn btn-primary btn-lg px-4 gap-3" href="/admin_console/">Admin Console</a>
+        {% endif %}
+        {% endif %} -->
+        <a class="btn btn-outline-primary btn-lg px-4 gap-3" href="/admin_console/">Admin Console</a>
+      </div>
+    </div>
+  </div>
+  
+</section>
+  <!-- <div class="px-4 py-5 my-5 text-center">
+  
+    <h1 class="display-4 fw-bold">Dashboard</h1>
+    <h1 class="display-6 fw-bold" style="color: red;">Signum</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">This is the user dashboard. Here you can view the App Library or Upload page to install your
+        apps.</p>
+      <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+        <a class="btn btn-primary btn-lg px-4" href="/library/">Library</a>
+        {% if g.user.admin %}
+        <a class="btn btn-outline-primary btn-lg px-4 gap-3" href="/admin_console/">Admin Console</a>
+        {% endif %}
+      </div>
+    </div>
+  </div> -->
+
+  <div class="text-center">
+    <h2>My Devices</h2>
+  </div>
+  <div class="card card-device">
+    <div class="card-body">
+       <div class="col-12">
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col">Device Type</th>
+            <th scope="col">UDID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- {% for device in devices %} -->
+          <tr>
+            <td>{{device.device_type}}</td>
+            <!-- {% if device.udid == 'none' %} -->
+            <!-- <td>
+              <form method="POST">
+                <input hidden name="device_id" value="{{device._id}}">
+                <button type="submit" class="btn btn-outline-secondary btn-lg px-2 py-1" style="height: 40px;">
+                  Link device
+                </button>
+              </form>
+            </td> -->
+            <!-- {% else %} -->
+            <td>{{device.udid}}</td>
+            <!-- {% endif %} -->
+          </tr>
+          <!-- {% endfor %} -->
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+
+<br><br>
+  <!-- <div class="">
+    <div class="col-12">
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th scope="col">Device Type</th>
+            <th scope="col">UDID</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for device in devices %}
+          <tr>
+            <td>{{device.device_type}}</td>
+            {% if device.udid == 'none' %}
+            <td>
+              <form method="POST">
+                <input hidden name="device_id" value="{{device._id}}">
+                <button type="submit" class="btn btn-outline-secondary btn-lg px-2 py-1" style="height: 40px;">
+                  Link device
+                </button>
+              </form>
+            </td>
+            {% else %}
+            <td>{{device.udid}}</td>
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div> -->
+  <div class="card card-info">
+    <div class="card-body">
+      <p class="card-text">Don't see your latest payment? Allow up to 24 hours for payment to show above.
+        <br>
+        In the mean time, <a href="https://discord.gg/Apbpq7eaAS">join the Discord!</a>
+      </p>
+    </div>
+  </div>
+<!-- 
+  <div class="text-center mb-4 py-2">
+    Don't see your latest payment? Allow up to 24 hours for payment to show above.
+    <br>
+    In the mean time, <a href="https://discord.gg/Apbpq7eaAS">join the Discord!</a>
+  </div> -->
+<br><br>
+  <div class="card card-info">
+    <div class="card-body">
+      Add your device udid to the system above in order to get your device in the database
+      <br>
+      Your device will not be signed instantly - an admin must do this manually and will alert you when complete via the
+      Discord.
+      <br>
+      Do not attempt to install until Untethered#9991 on Discord has verified that you are signed up correctly - you will
+      simply see an error when installing apps.
+      </p>
+    </div>
+  </div>
+<br><br>
+
+
+</body>
+
+<footer>
+  <div class="bg-light py-4">
+    <div class="container text-center">
+      <p class="text-muted mb-0 py-2">© 2021 Signum All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</html>
