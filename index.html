@@ -137,7 +137,7 @@
     }
     /* all illustrations */
     .bg-img{
-      width: 390px;
+      width: 340px;
       height: auto;
     }
     /* buttons of section1 */
@@ -197,6 +197,9 @@
         width: 153px;
         margin: 10px;
         font-size: 15px;
+      }
+      .bg-img{
+        width: 100%;
       }
     }
     /* Extra small devices (phones, 350px and down) */
@@ -258,7 +261,9 @@
           Welcome back, {{g.user.username}}
         </h4> -->
         <!-- {% endif %} -->
-        <img src="media/illustration.png" class="bg-img"alt="">
+        <div style="width: 100%; margin:auto;">
+          <img src="media/illustration.png" class="bg-img"alt="">
+        </div>
         <br><br>
         <div class="gap-2 d-sm-flex justify-content-sm-center button-container">
           <!-- {% if not g.user %} -->
@@ -281,7 +286,9 @@
       <h1 class="titles">Title One Is Here</h1>
     </div>
     <div class="px-5 text-center ">
-      <img src="media/illustration2.png" class="bg-img"alt="">  
+      <div style="width: 100%; margin:auto;">
+        <img src="media/illustration2.png" class="bg-img"alt="">
+      </div>
       <div class="card">
         <div class="card-body">
           <p class="card-text">We allow you to download and install any app in .ipa form straight into your iDevice.
@@ -299,7 +306,7 @@
       <h1 class="titles">Features</h1>
     </div>
     <div class="g-4 py-1 row-cols-1">
-      <div class="image-container"> 
+      <div class="image-container" style="width: 100%; margin:auto;"> 
         <img src="media/illustration-features.png" class="bg-img"alt="">
       </div>
       <div class="col py-4 d-flex align-items-start">
@@ -352,7 +359,9 @@
   </div>
   <!-- PRICES SECTION -->
   <div class="px-4 py-3 my-5 text-center">
+  <div style="width: 100%; margin:auto;">
     <img src="media/illustration-price.png" class="bg-img"alt="">
+  </div>    
     <h1 class="display-4 fw-bold">Pricing</h1>
     <br><br>
     <div class="card">
@@ -444,8 +453,4 @@
   </footer>
 </body>
 </html>
-links footer for testing
-the if then code is disabled
-some titles are missing. template texts
 
-choose nav scroll bg color
